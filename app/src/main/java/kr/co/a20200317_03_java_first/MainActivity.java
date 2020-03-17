@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,11 +34,14 @@ public class MainActivity extends AppCompatActivity {
 //        Edittext에 타이핑 => 입력버튼 => 텍스트항에 출력
 //        입력버튼 누르면 기존 입력내용삭제
 
-
-
-
-
-
+        binding.EditBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String input =binding.inputEdt.getText().toString();
+                binding.resulttext.setText(input);
+                binding.inputEdt.setText("");
+            }
+        });
 
     }
 }
