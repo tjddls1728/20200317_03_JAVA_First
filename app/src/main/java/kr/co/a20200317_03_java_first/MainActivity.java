@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         binding.EditBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Log.d(tag.버튼클릭,msg.입력버튼눌림);
+
                 String input =binding.inputEdt.getText().toString();
                 binding.resulttext.setText(input);
                 binding.inputEdt.setText("");
