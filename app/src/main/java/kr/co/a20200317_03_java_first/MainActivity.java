@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -39,11 +40,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Log.d(tag.버튼클릭,msg.입력버튼눌림);
+
+                Log.d("버튼클릭","입력버튼눌림");
 
                 String input =binding.inputEdt.getText().toString();
+
+                Log.d("입력값확인", input );
+
                 binding.resulttext.setText(input);
                 binding.inputEdt.setText("");
+            }
+        });
+
+        binding.loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                입력한값을 변수로 저장
+                String pw= binding.pwEdt.getText().toString();
+
+//                1234냐 아니냐
+                if (pw == "1234"){
+
+
+                }
+
             }
         });
 
